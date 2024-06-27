@@ -171,8 +171,9 @@ class QueryLogger:
         actor : str
             Имя актера для поиска.
         """
-        self.log_query(user_id, "actor", {"keywords": keywords, "genre": genre,
-                                          "start_year": start_year, "end_year": end_year, "actor": actor, })
+        self.log_query(user_id, "multiple_criteria",
+                       {"keywords": keywords, "genre": genre, "start_year": start_year, "end_year": end_year,
+                        "actor": actor, })
 
     def log_query(self, user_id, search_type, params):
         """
