@@ -408,7 +408,6 @@ class FilmSearchApp:
         Отображение популярных поисковых запросов, сохраненных в логах.
         """
         popular_queries = self.query_logger.get_popular_search_queries()
-        print(popular_queries)
         popular_queries_list = [self.localization_manager.get_localized_text('popular_search_queries')]
         params_dict = {
             'keywords': self.localization_manager.get_localized_text('keywords'),
@@ -427,7 +426,6 @@ class FilmSearchApp:
         }
         for idx, query in enumerate(popular_queries, start=1):
             search_type = search_type_dict[query[0]]
-            print(search_type)
             search_params = json.loads(query[1])
 
             # Форматирование строки параметров запроса
